@@ -5,5 +5,5 @@ module.exports = router
 
 
 router.get('/', (req,res) => {
-    res.send('listing test')
+    res.render('listing/listing.ejs')
 })

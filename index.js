@@ -9,7 +9,7 @@ app.use(ejsLayouts)
 
 // ROUTES
 app.get('/', (req,res) => {
-    res.send('testing')
+    res.render('home.ejs')
 })
 
 // CONTROLLERS

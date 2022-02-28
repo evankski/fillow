@@ -5,5 +5,5 @@ module.exports = router
 
 
 router.get('/', (req,res) => {
-    res.send('user test')
+    res.render('user/user.ejs')
 })

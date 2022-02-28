@@ -5,5 +5,5 @@ module.exports = router
 
 
 router.get('/', (req,res) => {
-    res.send('favorite test')
+    res.render('favorite/favorite.ejs')
 })
