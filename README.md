@@ -10,7 +10,8 @@ D - You can delete any listing that you posted
 The api I will choose to use is map box. With map box there will be a seperate page with a map that will show the favorited listings to the right. You will be able to search your favorited listings and see the house on a map. It will give you an idea of the neighborhood of the listing you chose.
 
 <h1> ERDs </h1>
-<img width="464" alt="Screen Shot 2022-02-27 at 11 44 36 PM" src="https://user-images.githubusercontent.com/95590888/155943881-b47d8ae9-b675-4af1-b7f1-eee2342cc4a7.png">
+
+![Screen Shot 2022-02-28 at 2 29 32 PM](https://user-images.githubusercontent.com/95590888/156069222-34e168cf-c950-4f1c-a542-b009d9b46545.png)
 
 
 <h1> Restful Routing Chart </h1>
