@@ -12,6 +12,12 @@ app.get('/', (req,res) => {
     res.send('testing')
 })
 
+// CONTROLLERS
+app.use('/user', require('./controllers/user.js'))
+app.use('/favorite', require('./controllers/favorite.js'))
+app.use('/listing', require('./controllers/listing.js'))
+
+
 const PORT = process.env.port || 8000
 app.listen(PORT, () => {
     console.log(`running port ${PORT}`)
