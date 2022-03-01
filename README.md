@@ -11,7 +11,8 @@ The api I will choose to use is map box. With map box there will be a seperate p
 
 <h1> ERDs </h1>
 
-![Screen Shot 2022-03-01 at 2 31 20 PM](https://user-images.githubusercontent.com/95590888/156259901-27e4c12b-7a20-4fdb-8fcd-28b3b7d54b21.png)
+![Screen Shot 2022-03-01 at 2 48 47 PM](https://user-images.githubusercontent.com/95590888/156261999-54847811-def2-4ef2-a05d-fe8bc400bc9f.png)
+
 
 
 
