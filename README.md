@@ -11,9 +11,7 @@ The api I will choose to use is map box. With map box there will be a seperate p
 
 <h1> ERDs </h1>
 
-![Screen Shot 2022-03-01 at 2 48 47 PM](https://user-images.githubusercontent.com/95590888/156261999-54847811-def2-4ef2-a05d-fe8bc400bc9f.png)
-
-
+![Screen Shot 2022-03-01 at 2 56 57 PM](https://user-images.githubusercontent.com/95590888/156262978-3e554d35-c5fa-41b4-b5ba-d731e9ecbc84.png)
 
 
 <h1> Restful Routing Chart </h1>
