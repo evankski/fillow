@@ -18,9 +18,16 @@
   },
   "homepage": "https://github.com/evankski/fillow#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "cryptojs": "^2.5.3",
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
+    "js": "^0.1.0",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0"
   }

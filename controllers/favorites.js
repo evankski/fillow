@@ -5,5 +5,5 @@ module.exports = router
 
 
 router.get('/', (req,res) => {
-    res.render('listing/listing.ejs')
+    res.render('favorites/favorite.ejs')
 })
