@@ -1,5 +1,7 @@
 sequelize model:create --name user --attributes email:string,password:string
 
-sequelize model:create --name upload --attributes address:string,city:string,state:string,price:integer,picId:text
+sequelize model:create --name listings --attributes userId:integer,address:string,city:string,state:string,price:integer,url:string
 
-sequelize model:create --name favorite --attributes address:string,username:string,city:string,state:string,price:integer,picId:text
+sequelize model:create --name users_listings --attributes userId:integer,listingId:integer
+
+sequelize model:create --name comments --attributes listingId:integer,userId:integer,content:string
