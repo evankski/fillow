@@ -7,6 +7,11 @@ require('dotenv').config() // allows us to access env vars
 const cookieParser = require('cookie-parser')
 const cryptoJS = require('crypto-js')
 const db = require('./models/index.js')
+const mapboxgl = require('mapbox-gl')
+const mapboxSdk = require('@mapbox/mapbox-sdk/services/geocoding')
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
+const geocodingClient = mbxGeocoding( { accessToken: process.env.MAPBOX_TOKEN })
+// const forwardGeocode = require('@mapbox/mapbox-sdk/services/geocoding')
 
 // MIDDLEWARE
 app.set ('view engine', 'ejs') // set the view engine to ejs
@@ -35,11 +40,33 @@ app.use(async (req,res, next) =>{
 app.use('/users', require('./controllers/users.js'))
 
 app.get('/', (req, res) => {
-    res.render('home.ejs')
-})
 
-const PORT = process.env.PORT || 8000
-app.listen(PORT, () => {
+    geocodingClient.forwardGeocode({
+        query: '209 w country club dr, brentwood ca',
+        // autocomplete: false,
+        // limit: 1
+    })
+    .send()
+    .then((response) => {
+        if (
+            !response ||
+            !response.body ||
+            !response.body.features ||
+            !response.body.features.length
+            ) {
+                console.error('Invalid response:');
+                console.error(response);
+                return;
+            }
+            const feature = response.body.features[0];
+            console.log(feature)
+            res.render('home.ejs', {mapkey: process.env.MAPBOX_TOKEN, match:feature})
+        });
+        
+    })
+    
+    const PORT = process.env.PORT || 8000
+    app.listen(PORT, () => {
     console.log(`Auth app running on ${PORT}`)
 })
 
