@@ -1,3 +1,38 @@
 
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 30%; height:30% }
+#map { position: relative; width: 700px; height:500px }
+.home-list {
+    font-size: 20px;
+    text-align: center;
+    list-style: none;
+    padding-top: 30px;
+
+}
+.home-ul{
+    list-style-type: none;
+}
+/*
+.layout-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+} */
+
+nav {
+    float:left;
+    
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+nav li {
+    display:inline-block;
+}
+.navbar-div {
+
+
+
+
+}

@@ -42,8 +42,9 @@ app.use('/users', require('./controllers/users.js'))
 app.use('/listings', require('./controllers/listings.js'))
 
 
-app.get('/', (req, res) => {
-    res.render('home.ejs')
+app.get('/', async (req, res) => {
+    const listings = await db.listings.findAll()
+    res.render('home.ejs',{listings: listings})
     })
     
     const PORT = process.env.PORT || 8000

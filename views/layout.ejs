@@ -13,20 +13,25 @@
 </head>
 <body>
     <h1>Fillow</h1>
-    <nav>
-        <ul>
+    <div class="navbar-div">
+    <nav class="navbar">
+        <ul class="layout-ul">
             <% if(user) { %>
-            <li><a href="/users/profile">Profile</a></li>
-            <li><a href="/users/logout">Logout</a></li>
-            <li><a href="/listings/new">Upload</a></li>
+            <li class="li-nav"><a href="/">Home</a></li>
+            <li class="li-nav"><a href="/users/profile">Profile</a></li>
+            <li class="li-nav"><a href="/users/logout">Logout</a></li>
+            <li class="li-nav"><a href="/listings/new">Upload</a></li>
+            
             <% } else { %>
-            <li><a href="/users/new">Sign Up</a></li>
-            <li><a href="/users/login">Login</a></li>
+            <li class="li-nav"><a href="/">Home</a></li> 
+            <li class="li-nav"><a href="/users/new">Sign Up</a></li>
+            <li class="li-nav"><a href="/users/login">Login</a></li>
 
             <% } %>
 
         </ul>
     </nav>
+    </div>
     <%- body %>
 </body>
 </html>

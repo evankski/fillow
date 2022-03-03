@@ -1,0 +1,7 @@
+<div class="home-list">
+<ul class="home-ul">
+<% listings.forEach((listing,i) => { %>
+  <li><a href="/listings/<%=listing.id%>"><%= listing.address %> </li>
+<% }) %>
+</ul>
+</div>
