@@ -15,6 +15,7 @@ const geocodingClient = mbxGeocoding( { accessToken: process.env.MAPBOX_TOKEN })
 
 // MIDDLEWARE
 app.set ('view engine', 'ejs') // set the view engine to ejs
+app.use("/public", express.static("public"))
 app.use(ejsLayouts) // tell express we want to use layouts
 app.use(cookieParser()) // gives us access to req.cookies
 app.use(express.urlencoded({extended:false})) //body parser to make req.body work
@@ -42,29 +43,7 @@ app.use('/listings', require('./controllers/listings.js'))
 
 
 app.get('/', (req, res) => {
-
-    geocodingClient.forwardGeocode({
-        query: '608 summerwood dr, brentwood ca',
-        // autocomplete: false,
-        // limit: 1
-    })
-    .send()
-    .then((response) => {
-        if (
-            !response ||
-            !response.body ||
-            !response.body.features ||
-            !response.body.features.length
-            ) {
-                console.error('Invalid response:');
-                console.error(response);
-                return;
-            }
-            const feature = response.body.features[0];
-            // console.log(feature)
-            res.render('home.ejs', {mapkey: process.env.MAPBOX_TOKEN, match:feature})
-        });
-        
+    res.render('home.ejs')
     })
     
     const PORT = process.env.PORT || 8000

@@ -50,8 +50,34 @@ router.get("/:id", (req, res) => {
     })
     .then((listing) => {
       if (!listing) throw Error();
-      console.log(listing.user);
-      res.render("listings/show", { listings: listing });
+      geocodingClient
+    .forwardGeocode({
+      query: `${listing.address} ${listing.city}, ${listing.state}`,
+      // autocomplete: false,
+      // limit: 1
+    })
+    .send()
+    .then((response) => {
+      if (
+        !response ||
+        !response.body ||
+        !response.body.features ||
+        !response.body.features.length
+      ) {
+        console.error("Invalid response:");
+        console.error(response);
+        return;
+      }
+      const feature = response.body.features[0];
+      // console.log(feature)
+      res.render("listings/show", {
+          listings: listing,
+        mapkey: process.env.MAPBOX_TOKEN,
+        match: feature,
+      });
+    });
+    //   console.log(listing.user);
+    //   res.render("listings/show", { listings: listing });
     })
     .catch((error) => {
       console.log(error);
@@ -73,32 +99,7 @@ router.get("/:id", (req, res) => {
 //       res.status(400).render("main/404");
 //     });
   // Loads the mapbox api
-//   geocodingClient
-//     .forwardGeocode({
-//       query: "608 summerwood dr, brentwood ca",
-//       // autocomplete: false,
-//       // limit: 1
-//     })
-//     .send()
-//     .then((response) => {
-//       if (
-//         !response ||
-//         !response.body ||
-//         !response.body.features ||
-//         !response.body.features.length
-//       ) {
-//         console.error("Invalid response:");
-//         console.error(response);
-//         return;
-//       }
-//       const feature = response.body.features[0];
-//       // console.log(feature)
-//       res.render("listings/show", {
-//           listings: lising,
-//         mapkey: process.env.MAPBOX_TOKEN,
-//         match: feature,
-//       });
-//     });
+
 });
 
 module.exports = router;
