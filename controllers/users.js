@@ -68,5 +68,29 @@ router.post('/login', async (req,res) => {
         res.redirect('/')
     })
 
+    // POST /faves -- CREATE a fave and redirect to /faves
+router.post('/listings/:id', async (req, res) => {
+    // toy = listing
+    try{
+      const listing = await db.listing.findByPk(req.params.id)
+  
+      await res.locals.user.addListing(listing)
+      res.redirect('/')
+    } catch (error) {
+      console.log(error)
+    }
+  
+    // try {
+    //   await db.users_listings.create({
+    //     userId: res.locals.user,
+    //     listingId: req.body.listingId
+    //   })
+  
+    //   res.redirect(' /')
+    // } catch(error) {
+    //   console.log(error)
+    // }
+   
+  })
 // export all these routes to the entry point file
 module.exports = router

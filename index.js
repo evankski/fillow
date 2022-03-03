@@ -43,7 +43,7 @@ app.use('/listings', require('./controllers/listings.js'))
 
 
 app.get('/', async (req, res) => {
-    const listings = await db.listings.findAll()
+    const listings = await db.listing.findAll()
     res.render('home.ejs',{listings: listings})
     })
     

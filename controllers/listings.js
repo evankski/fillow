@@ -43,7 +43,7 @@ router.get("/new", (req, res) => {
 
 // GET /listings/:id - display a specific listing
 router.get("/:id", (req, res) => {
-  db.listings
+  db.listing
     .findOne({
       where: { id: req.params.id },
       // include: [db.author, db.comments]
@@ -71,7 +71,7 @@ router.get("/:id", (req, res) => {
       const feature = response.body.features[0];
       // console.log(feature)
       res.render("listings/show", {
-          listings: listing,
+          listing: listing,
         mapkey: process.env.MAPBOX_TOKEN,
         match: feature,
       });
@@ -83,23 +83,18 @@ router.get("/:id", (req, res) => {
       console.log(error);
       res.status(400).render("main/404");
     });
-// router.get("/:id", (req, res) => {
-//   db.listings
-//     .findOne({
-//       where: { id: req.params.id },
-//       // include: [db.author, db.comments]
-//     })
-//     .then((listing) => {
-//       if (!listing) throw Error();
-//       console.log(listing.user);
-//       res.render("listings/show", { listings: listing });
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       res.status(400).render("main/404");
-//     });
-  // Loads the mapbox api
-
 });
+
+// GET /faves -- READ all faves from the database
+// router.get('/', async (req, res) => {
+//   try {
+//     const allFaves = await db.users_listings.findAll()
+//     res.json(allFaves)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })
+
+
 
 module.exports = router;
