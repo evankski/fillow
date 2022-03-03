@@ -38,6 +38,8 @@ app.use(async (req,res, next) =>{
 
 // CONTROLLERS - goes above any routes
 app.use('/users', require('./controllers/users.js'))
+app.use('/listings', require('./controllers/listings.js'))
+
 
 app.get('/', (req, res) => {
 
