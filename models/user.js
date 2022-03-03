@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.belongsToMany(models.listings, {through: 'users_listings'})
+      models.user.hasMany(models.comments)
     }
   }
   user.init({

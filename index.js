@@ -42,7 +42,7 @@ app.use('/users', require('./controllers/users.js'))
 app.get('/', (req, res) => {
 
     geocodingClient.forwardGeocode({
-        query: '209 w country club dr, brentwood ca',
+        query: '608 summerwood dr, brentwood ca',
         // autocomplete: false,
         // limit: 1
     })
