@@ -6,7 +6,7 @@ const ejsLayouts = require('express-ejs-layouts') // import ejs layouts
 require('dotenv').config() // allows us to access env vars
 const cookieParser = require('cookie-parser')
 const cryptoJS = require('crypto-js')
-const db = require('./models/index.js')
+const db = require('./models')
 const mapboxgl = require('mapbox-gl')
 const mapboxSdk = require('@mapbox/mapbox-sdk/services/geocoding')
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
                 return;
             }
             const feature = response.body.features[0];
-            console.log(feature)
+            // console.log(feature)
             res.render('home.ejs', {mapkey: process.env.MAPBOX_TOKEN, match:feature})
         });
         

@@ -1,0 +1,44 @@
+<h1><%= listings.address %></h1>
+<p><%= listings.city %></p>
+<p><%= listings.state %></p>
+<p><%= listings.price %></p>
+<img src="<%= listings.url %>" alt="">
+<hr />
+
+<div id='map'></div>
+
+
+<script> 
+  mapboxgl.accessToken = '<%= mapkey %>';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    center: ['<%= match.center[0] %>', '<%= match.center[1] %>'],
+    zoom: 17
+  })
+  const geojson = {
+    type: 'FeatureCollection',
+    features: [{
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: ['<%= match.center[0] %>', '<%= match.center[1] %>']
+      },
+      properties: {
+        title: 'Mapbox',
+        description: 'Mapbox Element'
+      }
+    }]
+  }
+  geojson.features.forEach(marker => {
+    const el = document.createElement('img')
+    el.class = 'marker'
+    el.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Map_pin_icon.svg/94px-Map_pin_icon.svg.png?20131230201244'
+    el.style.width = '3vw'
+    new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map)
+  })
+</script>
+
+<a href="/">&larr; Back Home</a>
