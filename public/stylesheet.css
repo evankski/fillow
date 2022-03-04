@@ -1,14 +1,23 @@
-
-#map { position: relative; width: 700px; height:500px }
-.home-list {
-    font-size: 20px;
+*{
     text-align: center;
-    list-style: none;
-    padding-top: 30px;
-
+    margin: 0 auto;
 }
-.home-ul{
-    list-style-type: none;
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.home-list {
+  font-size: 20px;
+  text-align: center;
+  list-style: none;
+  padding-top: 30px;
+}
+.home-ul {
+  list-style-type: none;
 }
 /*
 .layout-ul {
@@ -18,22 +27,58 @@
     width: 60px;
 } */
 
-nav {
-    float:left;
-    
+nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+nav li{
+    display:inline;
+}
+nav a{
+    display:inline-block;
+    padding:10px;
+}
+
+
+/* nav {
+  float: left;
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
 nav ul {
-    /* TRBL */
-    margin: 0;
-    padding: 0;
-    list-style:none;
-}
-nav li {
-    display:inline-block;
-}
+  /* TRBL */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* list-style: none; */
+ 
+/* } */
+/* nav li { */
+  /* display: inline-block; */
+  /* margin: 0 auto; */
+  /* text-align: center; */ */
+
+/* } */
 .hello-user {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 .create {
-    padding-top: 20px;
+  padding-top: 20px;
+}
+.create-or-login {
+  padding-top: 20px;
+}
+.show-image {
+  padding-top: 20px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+.comment-about-prop{
+    margin-bottom: 80px;
 }

@@ -1,5 +1,6 @@
 <% if(user) { %>
 <div class="home-list">
+  <h2>All listings</h2>
 <ul class="home-ul">
 <% listings.forEach((listing,i) => { %>
   <li><a href="/listings/<%=listing.id%>"><%= listing.address %> </li>

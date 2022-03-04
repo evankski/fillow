@@ -1,8 +1,11 @@
-<img src="<%= listing.url %>" alt="an image of <%= listing.address %>">
+<img src="<%= listing.url %>" alt="an image of <%= listing.address %>" class="show-image">
 <h1><%= listing.address %></h1>
-<p><%= listing.city %></p>
-<p><%= listing.state %></p>
-<p><%= listing.price %></p>
+<p><%= listing.city %>, <%= listing.state %></p>
+<p>Estimated Price = $<%= listing.price %></p>
+
+
+<div id='map'></div>
+
 
 <form action="/users/listings/<%= listing.id %>" method="post">
   <input type="submit" value="Favorite this listing">
@@ -18,32 +21,33 @@
 </form>
 <% } %>
 
+
+<form action="/listings/comments" method="POST">
+  <div class="form-group">
+    <label for="content">comment</label>
+    <input type="text" class="form-control" id="content" name="content" required>
+  
+    <div class="form-group">
+      <input type="hidden" class="form-control" id="userId" name="userId" value="<%= user.id %>">
+    </div>
+  
+    <div class="form-group">
+      <input type="hidden" class="form-control" id="listingId" name="listingId" value="<%= listing.id %>">
+    </div>
+  
+    <div class="form-group">
+      <input type="hidden" class="form-control" id="email" name="email" value="<%= user.email %>">
+    </div>
+  </div>
+  <input type="submit" class="btn btn-primary">
+  </form>
+
+  <h2>Comments about the property</h2>
+<div class="comment-about-prop">
 <% comment.forEach(element => { %>
   <li><%= element.content %> - <%= element.email %></li>
 <% }) %>
-
-<div id='map'></div>
-
-<form action="/listings/comments" method="POST">
-<div class="form-group">
-  <label for="content">comment</label>
-  <input type="text" class="form-control" id="content" name="content" required>
-
-  <div class="form-group">
-    <input type="hidden" class="form-control" id="userId" name="userId" value="<%= user.id %>">
-  </div>
-
-  <div class="form-group">
-    <input type="hidden" class="form-control" id="listingId" name="listingId" value="<%= listing.id %>">
-  </div>
-
-  <div class="form-group">
-    <input type="hidden" class="form-control" id="email" name="email" value="<%= user.email %>">
-  </div>
 </div>
-<input type="submit" class="btn btn-primary">
-</form>
-
 
 <script> 
   mapboxgl.accessToken = '<%= mapkey %>';
