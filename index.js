@@ -1,5 +1,3 @@
-
-
 const express = require('express') // import express
 const app = express() // create an express instance
 const ejsLayouts = require('express-ejs-layouts') // import ejs layouts
@@ -11,6 +9,7 @@ const mapboxgl = require('mapbox-gl')
 const mapboxSdk = require('@mapbox/mapbox-sdk/services/geocoding')
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
 const geocodingClient = mbxGeocoding( { accessToken: process.env.MAPBOX_TOKEN })
+const methodOverride = require('method-override')
 // const forwardGeocode = require('@mapbox/mapbox-sdk/services/geocoding')
 
 // MIDDLEWARE
@@ -18,6 +17,7 @@ app.set ('view engine', 'ejs') // set the view engine to ejs
 app.use("/public", express.static("public"))
 app.use(ejsLayouts) // tell express we want to use layouts
 app.use(cookieParser()) // gives us access to req.cookies
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:false})) //body parser to make req.body work
 
 // CUSTOM LOGIN MIDDLEWARE

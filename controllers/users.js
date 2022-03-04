@@ -9,7 +9,7 @@ router.get('/profile', async (req, res) => {
     try {
         // const users_listings = await db.users_listings.findAll()
         const users_listings = await res.locals.user.getListings()
-        console.log(users_listings)
+        // console.log(users_listings)
         res.render('users/profile.ejs', {users_listings: users_listings})
         
     } catch(error) {

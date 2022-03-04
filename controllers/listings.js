@@ -85,6 +85,46 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.put('/edit/:id', async (req,res) => {
+  try {
+    const foundListing = await db.listing.findOne({
+        where: {
+            // userId: res.locals.user.id,
+            id: req.params.id,
+        },
+    });
+    foundListing.update({
+      userId: req.body.userId,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      price: req.body.price,
+      url: req.body.url,
+    });
+    await foundListing.save();
+    res.redirect('/');
+} catch (err) {
+    console.log("err", err);
+}
+})
+router.get('/edit/:id', (req,res) => {
+
+  res.render('listings/edit.ejs', {listingId: req.params.id})
+})
+
+router.delete("/:id", async (req, res) => {
+
+      try {
+          const foundListing = await db.listing.findOne({
+              where: { id: req.params.id },
+          });
+          await foundListing.destroy();
+          res.redirect("/");
+      } catch (err) {
+          console.log(err);
+      }
+});
+
 // GET /faves -- READ all faves from the database
 // router.get('/', async (req, res) => {
 //   try {

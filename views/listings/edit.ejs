@@ -1,6 +1,6 @@
-<h1 class="create">Create a listing</h1>
+<h1 class="create">Update a listing</h1>
 
-<form action="/listings" method="POST">
+<form action="/listings/edit/<%= listingId %>/?_method=PUT " method="post">
   <div class="form-group">
     <label for="address">Address</label>
     <input type="text" class="form-control" id="address" name="address" required>
