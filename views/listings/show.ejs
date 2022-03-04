@@ -8,6 +8,7 @@
   <input type="submit" value="Favorite this listing">
 </form>
 
+<% if (user.id === listing.userId) { %>
 <form action="/listings/edit/<%= listing.id %>" method="get">
   <input type="submit" value="edit this listing">
 </form>
@@ -15,7 +16,7 @@
 <form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
   <input type="submit" value="delete this listing">
 </form>
-
+<% } %>
 
 <div id='map'></div>
 <script> 

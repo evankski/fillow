@@ -31,10 +31,11 @@ router.post("/", (req, res) => {
 
 // GET /listings/new - display form for creating new listing
 router.get("/new", (req, res) => {
+  const user = res.locals.user
   db.user
     .findAll()
     .then((users) => {
-      res.render("listings/new", { users: users });
+      res.render("listings/new", { users: users, user:user });
     })
     .catch((error) => {
       res.status(400).render("main/404");
@@ -43,6 +44,7 @@ router.get("/new", (req, res) => {
 
 // GET /listings/:id - display a specific listing
 router.get("/:id", (req, res) => {
+  const user = res.locals.user
   db.listing
     .findOne({
       where: { id: req.params.id },
@@ -74,6 +76,7 @@ router.get("/:id", (req, res) => {
           listing: listing,
         mapkey: process.env.MAPBOX_TOKEN,
         match: feature,
+        user: user
       });
     });
     //   console.log(listing.user);
