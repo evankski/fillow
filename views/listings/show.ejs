@@ -18,7 +18,33 @@
 </form>
 <% } %>
 
+<% comment.forEach(element => { %>
+  <li><%= element.content %> - <%= element.email %></li>
+<% }) %>
+
 <div id='map'></div>
+
+<form action="/listings/comments" method="POST">
+<div class="form-group">
+  <label for="content">comment</label>
+  <input type="text" class="form-control" id="content" name="content" required>
+
+  <div class="form-group">
+    <input type="hidden" class="form-control" id="userId" name="userId" value="<%= user.id %>">
+  </div>
+
+  <div class="form-group">
+    <input type="hidden" class="form-control" id="listingId" name="listingId" value="<%= listing.id %>">
+  </div>
+
+  <div class="form-group">
+    <input type="hidden" class="form-control" id="email" name="email" value="<%= user.email %>">
+  </div>
+</div>
+<input type="submit" class="btn btn-primary">
+</form>
+
+
 <script> 
   mapboxgl.accessToken = '<%= mapkey %>';
   const map = new mapboxgl.Map({
@@ -51,3 +77,4 @@
     .addTo(map)
   })
 </script>
+

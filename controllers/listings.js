@@ -43,8 +43,11 @@ router.get("/new", (req, res) => {
 });
 
 // GET /listings/:id - display a specific listing
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   const user = res.locals.user
+  const comment = await db.comment.findAll({
+    where: {listingId: req.params.id}
+  })
   db.listing
     .findOne({
       where: { id: req.params.id },
@@ -72,11 +75,17 @@ router.get("/:id", (req, res) => {
       }
       const feature = response.body.features[0];
       // console.log(feature)
+      comment.forEach( async (element,i) => {
+        comment[i].user = await db.user.findOne({
+          where: {id: element.userId}
+        })
+      })
       res.render("listings/show", {
-          listing: listing,
+        listing: listing,
         mapkey: process.env.MAPBOX_TOKEN,
         match: feature,
-        user: user
+        user: user,
+        comment: comment
       });
     });
     //   console.log(listing.user);
@@ -126,6 +135,22 @@ router.delete("/:id", async (req, res) => {
           console.log(err);
       }
 });
+
+router.post('/comments', (req,res) => {
+  db.comment
+    .create({
+      listingId: req.body.listingId,
+      userId: req.body.userId,
+      email: req.body.email,
+      content: req.body.content,
+    })
+    .then((post) => {
+      res.redirect("/");
+    })
+    .catch((error) => {
+      res.status(400).render("main/404");
+    });
+})
 
 // GET /faves -- READ all faves from the database
 // router.get('/', async (req, res) => {

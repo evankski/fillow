@@ -1,3 +1,4 @@
+<% if(user) { %>
 <div class="home-list">
 <ul class="home-ul">
 <% listings.forEach((listing,i) => { %>
@@ -5,3 +6,6 @@
 <% }) %>
 </ul>
 </div>
+<% } else { %>
+  <h1 class="create-or-login">Create an account or login to see listings!</h1>
+<%}%>

@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require("../models");
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('comments', {
@@ -24,6 +27,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      email: {
+        type: Sequelize.STRING
       }
     });
   },
