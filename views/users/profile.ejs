@@ -1,1 +1,7 @@
-<h2>Hello <%= user.email %></h2>
+<h2 class="hello-user">Hello <%= user.email %></h2>
+<h1>favorites</h1>
+<ul>
+    <% users_listings.forEach((listing) => { %>
+        <li><a href="/listings/<%=listing.id%>"><%= listing.address %></a></li>
+      <% }) %>
+</ul>

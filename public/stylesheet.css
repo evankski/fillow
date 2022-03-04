@@ -23,6 +23,7 @@ nav {
     
 }
 nav ul {
+    /* TRBL */
     margin: 0;
     padding: 0;
     list-style:none;
@@ -30,9 +31,6 @@ nav ul {
 nav li {
     display:inline-block;
 }
-.navbar-div {
-
-
-
-
+.hello-user {
+    padding-top: 20px;
 }

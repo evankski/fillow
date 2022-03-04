@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
 // POST /listing - creates a new listing
 router.post("/", (req, res) => {
-  db.listings
+  db.listing
     .create({
       userId: req.body.userId,
       address: req.body.address,
