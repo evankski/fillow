@@ -107,9 +107,8 @@ router.put('/edit/:id', async (req,res) => {
     console.log("err", err);
 }
 })
-router.get('/edit/:id', (req,res) => {
-
-  res.render('listings/edit.ejs', {listingId: req.params.id})
+router.get('/edit/:id', async (req,res) => {
+      res.render('listings/edit.ejs', {listingId: req.params.id})
 })
 
 router.delete("/:id", async (req, res) => {
