@@ -1,6 +1,8 @@
 *{
     text-align: center;
     margin: 0 auto;
+    font-family: 'Fredoka', sans-serif;
+    list-style: none;
 }
 
 #map {
@@ -81,4 +83,7 @@ nav ul {
 }
 .comment-about-prop{
     margin-bottom: 80px;
+}
+.homepage-list{
+    padding: 1px;
 }
