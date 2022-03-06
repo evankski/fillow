@@ -4,7 +4,12 @@
   "description": "<h1> What is Fillow? </h1> Fillow is a simplified version of Zillow. You first will be prompted to create an account. After account creation, you will be able to view all houses listed by other users. You will be able to favorite any homes you like.  C - You will be able to create a listing R - You can see listings posted by other users U - You will be able to edit any listing you posted D - You can delete any listing that you posted",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "react-scripts start",
+"start": "serve -s build",
+"build": "react-scripts build",
+"test": "react-scripts test --env=jsdom",
+"eject": "react-scripts eject",
+"heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,7 @@
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.13.2",
     "bcrypt": "^5.0.1",
+    "bootswatch": "^5.1.3",
     "cookie-parser": "^1.4.6",
     "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
@@ -34,6 +40,7 @@
     "method-override": "^3.0.0",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "serve": "^13.0.2"
   }
 }
