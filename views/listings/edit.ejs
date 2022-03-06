@@ -1,8 +1,8 @@
 <h1 class="create">Update a listing</h1>
 
-<h3>Make sure to put a real house, and no commas in your price!</h3>
-
-<form action="/listings/edit/<%= listingId %>/?_method=PUT " method="post">
+<form action="/listings/edit/<%= listingId %>/?_method=PUT " method="post" class="create-listing">
+  
+  <h3>Make sure to put a real house, and no commas in your price!</h3>
   <div class="form-group">
     <label for="address">Address</label>
     <input type="text" class="form-control" id="address" name="address" placeholder="123 Banana st" required>

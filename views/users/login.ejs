@@ -1,14 +1,14 @@
 
-<p>If you dont want to make an account, use email - 123@123.com password - 123</p>
+<p class="one-account">If you dont want to make an account, use email - 123@123.com password - 123</p>
 
 
-<form action="/users/login" method="POST">
+<form action="/users/login" method="POST" >
     <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
+    <input type="email" name="email" id="email" class="login-field" placeholder="name@email.com">
     
     
     <label for="email">Password:</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" class="login-field" placeholder="password">
     
-    <button type="submit">Log In</button>
+    <button type="submit" class="login">Log In</button>
 </form>
