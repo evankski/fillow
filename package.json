@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "<h1> What is Fillow? </h1> Fillow is a simplified version of Zillow. You first will be prompted to create an account. After account creation, you will be able to view all houses listed by other users. You will be able to favorite any homes you like.  C - You will be able to create a listing R - You can see listings posted by other users U - You will be able to edit any listing you posted D - You can delete any listing that you posted",
   "main": "index.js",
+  "test": "ezcho \"Error: no test specified\" && exit 1",
   "scripts": {
     "dev": "react-scripts start",
 "start": "serve -s build",
