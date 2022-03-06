@@ -3,6 +3,40 @@
     margin: 0 auto;
     font-family: 'Fredoka', sans-serif;
     list-style: none;
+    color: white;
+}
+  /* .ac {
+    height: 40px;
+    width: 100px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+  } */
+
+  /* .cc {
+    position: relative;
+  } */
+
+  body {
+    /* overflow: hidden; */
+    height: 1000px;
+    width: 100%;
+    background-color: #2b4170;
+    background: -moz-linear-gradient(top, #3b5998, #2b4170);
+    background: -ms-linear-gradient(top, #3b5998, #2b4170);
+    background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+    border: 1px solid #2b4170;
+    text-shadow: 0 -1px -1px #1f2f52;
+  }
+
+.all-listings {
+    padding-bottom: 30px;
 }
 
 #map {
@@ -17,9 +51,20 @@
   text-align: center;
   list-style: none;
   padding-top: 30px;
+  /* background-color: #15172b; */
 }
 .home-ul {
   list-style-type: none;
+  border: 2px solid white;
+  margin-left: 200px;
+  margin-right: 200px;
+    padding-top: 20px;
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+    width: 920px;
 }
 /*
 .layout-ul {
@@ -30,12 +75,13 @@
 } */
 
 nav{
-    border:1px solid #ccc;
+    /* border:1px solid #ccc; */
     border-width:1px 0;
     list-style:none;
     margin:0;
     padding:0;
     text-align:center;
+    background-color: rgba(0,0,0, 0.5);
 }
 nav li{
     display:inline;
@@ -74,16 +120,151 @@ nav ul {
 .create-or-login {
   padding-top: 20px;
 }
-.show-image {
+/* .show-image {
   padding-top: 20px;
   text-align: center;
   display: block;
   margin: 0 auto;
   width: 50%;
-}
+} */
 .comment-about-prop{
     margin-bottom: 80px;
 }
 .homepage-list{
     padding: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fillow-hometext {
+    padding-top: 30px;
+    font-size: 70px;
+}
+
+.form-control {
+    color: black;
+}
+
+.form-control {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+    text-align: left;
+}
+.btn-primary{
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 100%;
+}
+.create-listing {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+}
+.create-comment {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 200px;
+    padding: 20px;
+    width: 320px;
+}
+.show-buttons {
+padding-bottom: 130px;
+padding-left: 280px;
+}
+.show-submit{
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 200px;
+    float: left;
+    margin: 20px;
+}
+.house-info {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 400px 1fr;
+    /* gap: 1rem; */
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font: 500 100%/1.5 system-ui;
+    font-size:25px;
+}
+.img{
+    max-width: 100%;
+    height: 100%;
+}
+.listing-info{
+
+}
+.login-style {
+    color: black;
+}
+
+.login-style {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+    text-align: left;
+}
+.one-account{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.login{
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 28px;
+    margin-top: 38px;
+    text-align: center;
+    width: 90px;
+}
+.login-field{
+    color:black;
+    text-align: left;
 }

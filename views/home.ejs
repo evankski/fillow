@@ -1,6 +1,10 @@
+<h1 class="fillow-hometext">Fillow</h1>
+
+<p></p>
+
 <% if(user) { %>
 <div class="home-list">
-  <h2>All listings</h2>
+  <h2 class="all-listings">All listings</h2>
 <ul class="home-ul">
 <% listings.forEach((listing,i) => { %>
   <li><a href="/listings/<%=listing.id%>" class="homepage-list"><%= listing.address %> </li>
