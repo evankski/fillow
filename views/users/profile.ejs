@@ -1,8 +1,10 @@
-<h2 class="hello-user">Hello <%= user.email %></h2>
-<h1>favorites</h1>
-<ul>
+<h2 class="hello-user">Hello, <%= user.email %></h2>
+<h1>Favorites</h1>
+<div class="home-list">
+<ul class="home-ul">
     <% users_listings.forEach((listing) => { %>
         <li><a href="/listings/<%=listing.id%>"><%= listing.address %></a></li>
       <% }) %>
       </form>
 </ul>
+</div>

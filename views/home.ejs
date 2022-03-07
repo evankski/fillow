@@ -7,7 +7,7 @@
   <h2 class="all-listings">All listings</h2>
 <ul class="home-ul">
 <% listings.forEach((listing,i) => { %>
-  <li><a href="/listings/<%=listing.id%>" class="homepage-list"><%= listing.address %> </li>
+  <li><a href="/listings/<%=listing.id%>" class="homepage-list"><%= listing.address %>, <%= listing.city %> <%= listing.state %> </li>
 <% }) %>
 </ul>
 </div>
