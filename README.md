@@ -6,8 +6,55 @@ R - You can see listings posted by other users
 U - You will be able to edit any listing you posted
 D - You can delete any listing that you posted
 
+<h1>Installation Instructions </h1>
+```
+npm i @mapbox/mapbox-sdk
+```
+```
+npm i bcrypt
+```
+```
+npm i cookie-parser
+```
+```
+npm i crypto-js
+```
+```
+npm i dotenv
+```
+```
+npm i ejs
+```
+```
+npm i express
+```
+```
+npm i express-ejs-layouts
+```
+```
+npm i mapbox
+```
+```
+npm i mapbox-gl
+```
+```
+npm i method-override
+```
+```
+npm i pg sequelize
+```
+
+<h1> Deployed Website </h1>
+https://fillow.herokuapp.com/
+
+<h1> Approach </h1>
+The first thing I did when creating this project was get all of the basic routes created to have a functioning webpage. This consisted of creating the homepage, controllers for Listings and Users. I then decided to first tackle the CRUD functionality of my site. To do this, I created all of my routes and started bulding them all up. I then decided to implement the API to each listing by having it in the show ejs. After completing this functionality, I moved onto making the favorites page. The second to last thing was creating the comments, I knew once the rest was created that this would be easier to implement. Lastly, I styled everything once I tested all of the functionality of my site.
+
+<h1> Post-project reflection </h1>
+I am fairly happy with how this website turned out. This project has really made clear how to properly use ERDs to create databases with connecting functionality. If I were to have made this project with zero planning, then I would most certanily have ran into a lot more bugs. The only unfixed issue I have is when a listing is created or edited with random variables in each area of the form it can occasionaliy break the webpage.
+
 <h1> API </h1>
-The api I will choose to use is map box. With map box there will be a seperate page with a map that will show the favorited listings to the right. You will be able to search your favorited listings and see the house on a map. It will give you an idea of the neighborhood of the listing you chose.
+The API I chose to use was MapBox to display each listing on a map that shows its exact location.
 
 <h1> ERDs </h1>
 
@@ -19,20 +66,22 @@ The api I will choose to use is map box. With map box there will be a seperate p
 | **URL** | **HTTP Verb** |
 |------------|-------------|
 | /         | GET         
-| /users/new         | GET         
+| /users/         | POST        
 | /users/login          | GET  
 | /users/login          | POST 
-| /users/logout          | POST 
-| /listing      | GET   
-| /listing/:id      | GET   
-| /litsing/create | GET              
-| /listing/create      | POST    
-| /listing/edit/:id      | GET  
-| /listing/edit/:id      | POST 
-| /listing/delete/:id      | POST
-| /listing/delete/:id      | DELETE
-| /favorites      | GET 
-| /favorites      | POST
+| /users/logout          | GET
+| /users/profile      | POST
+| /users/listings/:id      | POST 
+| /users/new      | GET   
+| /listings/      | POST
+| /litsings/new | GET              
+| /listings/create      | POST    
+| /listings/:id      | GET  
+| /listings/edit/:id      | PUT 
+| /listings/edit/:id      | GET
+| /listings/:id      | DELETE
+| /listings/comments      | POST
+
 
 <h1> Wireframes </h1>
 # Home page
