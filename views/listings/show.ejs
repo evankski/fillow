@@ -13,11 +13,19 @@
 
 <% if (user.id === listing.userId) { %>
 <form action="/listings/edit/<%= listing.id %>" method="get">
+<<<<<<< HEAD
   <input type="submit" value="Edit this listing" class="show-submit" class="center-form">
 </form>
 
 <form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
   <input type="submit" value="Delete this listing" class="show-submit" class="center-form">
+=======
+  <input type="submit" value="edit this listing" class="show-submit" class="center-form">
+</form>
+
+<form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
+  <input type="submit" value="delete this listing" class="show-submit" class="center-form">
+>>>>>>> e06cd29 (adds different styling)
 </form>
 <% } %>
 </div>
