@@ -2,7 +2,10 @@
 <h1> What is Fillow? </h1>
 Fillow is a simplified version of Zillow! When creating an account, you will have the option to browse every listing posted by already signed up users. Any user can upload a listing of their choice. Is there a listing you like? Go ahead and throw it in your favorites! Want to let someone know how beautiful their property is? Leave a comment! This is a great place for everyone to show off their properties.
 
-<h1>Installation Instructions </h1>
+# Installation Instructions
+1. first use npm init -y
+2. then create your database - create db fillow
+3. install all node packages below 
 ```
 npm i @mapbox/mapbox-sdk
 ```
@@ -40,24 +43,24 @@ npm i method-override
 npm i pg sequelize
 ```
 
-<h1> Deployed Website </h1>
+# Deployed Website 
 https://fillow.herokuapp.com/
 
-<h1> Approach </h1>
+# Approach 
 The first thing I did when creating this project was get all of the basic routes created to have a functioning webpage. This consisted of creating the homepage, controllers for Listings and Users. I then decided to first tackle the CRUD functionality of my site. To do this, I created all of my routes and started bulding them all up. I then decided to implement the API to each listing by having it in the show ejs. After completing this functionality, I moved onto making the favorites page. The second to last thing was creating the comments, I knew once the rest was created that this would be easier to implement. Lastly, I styled everything once I tested all of the functionality of my site.
 
-<h1> Post-project reflection </h1>
+# Post-project reflection 
 I am fairly happy with how this website turned out. This project has really made clear how to properly use ERDs to create databases with connecting functionality. If I were to have made this project with zero planning, then I would most certanily have ran into a lot more bugs. The only unfixed issue I have is when a listing is created or edited with random variables in each area of the form it can occasionaliy break the webpage.
 
-<h1> API </h1>
+# API 
 The API I chose to use was MapBox to display each listing on a map that shows its exact location.
 
-<h1> ERDs </h1>
+# ERDs 
 
 ![Screen Shot 2022-03-01 at 2 56 57 PM](https://user-images.githubusercontent.com/95590888/156262978-3e554d35-c5fa-41b4-b5ba-d731e9ecbc84.png)
 
 
-<h1> Restful Routing Chart </h1>
+# Restful Routing Chart 
 
 | **URL** | **HTTP Verb** |
 |------------|-------------|
@@ -79,7 +82,7 @@ The API I chose to use was MapBox to display each listing on a map that shows it
 | /listings/comments      | POST
 
 
-<h1> Wireframes </h1>
+# Wireframes 
 # Home page
 <img width="506" alt="Screen Shot 2022-02-27 at 11 23 16 PM" src="https://user-images.githubusercontent.com/95590888/155941290-fe3dbca0-083a-4466-abc4-d80a48aec7e4.png">
 
@@ -101,11 +104,11 @@ The API I chose to use was MapBox to display each listing on a map that shows it
 # Listing after link clicked
 <img width="371" alt="Screen Shot 2022-02-27 at 11 27 55 PM" src="https://user-images.githubusercontent.com/95590888/155941684-a5246dbd-05d2-4adf-be62-cc37a320e432.png">
 
-<h1> User Stories </h1>
+# User Stories 
 As a user, I want to create a listing of my house for every other user to see so I can sell my property.
 As a user, I want to favorite other peoples listings so I can keep track of the best properties.
 
-<h1> MVP goals </h1>
+# MVP goals 
 * sign up functionality
 * sign in funcionality
 * favorite system
@@ -114,6 +117,6 @@ As a user, I want to favorite other peoples listings so I can keep track of the 
 * a database table that keeps track of favorites per user
 * a CRUD system for uploading listings
 
-<h1> stretch goals </h1>
+# stretch goals
 * comment functionality on each listing posted
 * a profile page that shows all listings for one user
