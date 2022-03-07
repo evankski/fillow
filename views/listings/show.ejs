@@ -1,93 +1,136 @@
 <div class="house-info">
-<img src="<%= listing.url %>" alt="an image of <%= listing.address %>" class="show-image img">
+  <img
+    src="<%= listing.url %>"
+    alt="an image of <%= listing.address %>"
+    class="show-image img"
+  />
 
-<p class="listing-info"><%= listing.address %> <%= listing.city %>, <%= listing.state %> <br />Estimated Price = $<%= listing.price %></p>
+  <p class="listing-info">
+    <%= listing.address %> <%= listing.city %>, <%= listing.state %>
+    <br />Estimated Price = $<%= listing.price %>
+  </p>
 </div>
 
-
-
 <div class="show-buttons">
-<form action="/users/listings/<%= listing.id %>" method="post" class="center-form">
-  <input type="submit" value="Favorite this listing" class="show-submit">
-</form>
+  <form
+    action="/users/listings/<%= listing.id %>"
+    method="post"
+    class="center-form"
+  >
+    <input type="submit" value="Favorite this listing" class="show-submit" />
+  </form>
 
-<% if (user.id === listing.userId) { %>
-<form action="/listings/edit/<%= listing.id %>" method="get">
-<<<<<<< HEAD
-  <input type="submit" value="Edit this listing" class="show-submit" class="center-form">
-</form>
+  <% if (user.id === listing.userId) { %>
+  <form action="/listings/edit/<%= listing.id %>" method="get">
+    <input
+      type="submit"
+      value="Edit this listing"
+      class="show-submit"
+      class="center-form"
+    />
+  </form>
 
-<form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
-  <input type="submit" value="Delete this listing" class="show-submit" class="center-form">
-=======
-  <input type="submit" value="edit this listing" class="show-submit" class="center-form">
-</form>
-
-<form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
-  <input type="submit" value="delete this listing" class="show-submit" class="center-form">
->>>>>>> e06cd29 (adds different styling)
-</form>
-<% } %>
+  <form action="/listings/<%= listing.id %>/?_method=DELETE" method="post">
+    <input
+      type="submit"
+      value="Delete this listing"
+      class="show-submit"
+      class="center-form"
+    />
+  </form>
+  <% } %>
 </div>
 
 <form action="/listings/comments" method="POST" class="create-comment">
   <div class="form-group">
     <label for="content">Comment</label>
-    <input type="text" class="form-control" id="content" name="content" required>
-  
+    <input
+      type="text"
+      class="form-control"
+      id="content"
+      name="content"
+      required
+    />
+
     <div class="form-group">
-      <input type="hidden" class="form-control" id="userId" name="userId" value="<%= user.id %>">
+      <input
+        type="hidden"
+        class="form-control"
+        id="userId"
+        name="userId"
+        value="<%= user.id %>"
+      />
     </div>
-  
+
     <div class="form-group">
-      <input type="hidden" class="form-control" id="listingId" name="listingId" value="<%= listing.id %>">
+      <input
+        type="hidden"
+        class="form-control"
+        id="listingId"
+        name="listingId"
+        value="<%= listing.id %>"
+      />
     </div>
-  
+
     <div class="form-group">
-      <input type="hidden" class="form-control" id="email" name="email" value="<%= user.email %>">
+      <input
+        type="hidden"
+        class="form-control"
+        id="email"
+        name="email"
+        value="<%= user.email %>"
+      />
     </div>
   </div>
-  <input type="submit" class="btn btn-primary">
-  </form>
+  <input type="submit" class="btn btn-primary" />
+</form>
 
-  <h2>Comments about the property</h2>
+<h2>Comments about the property</h2>
 <div class="comment-about-prop">
-<% comment.forEach(element => { %>
+  <% comment.forEach(element => { %>
   <li><%= element.content %> - <%= element.email %></li>
-<% }) %>
+  <form action="/comments/<%= comment.id %>/?_method=DELETE" method="post">
+    <input
+      type="submit"
+      value="Delete this comment"
+      class="show-submit"
+      class="center-form"
+    />
+  </form>
+  <% }) %>
 </div>
 
-<div id='map'></div>
-<script> 
-  mapboxgl.accessToken = '<%= mapkey %>';
+<div id="map"></div>
+<script>
+  mapboxgl.accessToken = "<%= mapkey %>";
   const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    center: ['<%= match.center[0] %>', '<%= match.center[1] %>'],
-    zoom: 17
-  })
+    container: "map",
+    style: "mapbox://styles/mapbox/satellite-v9",
+    center: ["<%= match.center[0] %>", "<%= match.center[1] %>"],
+    zoom: 17,
+  });
   const geojson = {
-    type: 'FeatureCollection',
-    features: [{
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: ['<%= match.center[0] %>', '<%= match.center[1] %>']
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: ["<%= match.center[0] %>", "<%= match.center[1] %>"],
+        },
+        properties: {
+          title: "Mapbox",
+          description: "Mapbox Element",
+        },
       },
-      properties: {
-        title: 'Mapbox',
-        description: 'Mapbox Element'
-      }
-    }]
-  }
-  geojson.features.forEach(marker => {
-    const el = document.createElement('img')
-    el.class = 'marker'
-    el.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Map_pin_icon.svg/94px-Map_pin_icon.svg.png?20131230201244'
-    el.style.width = '3vw'
-    new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .addTo(map)
-  })
+    ],
+  };
+  geojson.features.forEach((marker) => {
+    const el = document.createElement("img");
+    el.class = "marker";
+    el.src =
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Map_pin_icon.svg/94px-Map_pin_icon.svg.png?20131230201244";
+    el.style.width = "3vw";
+    new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
+  });
 </script>
-

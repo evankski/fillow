@@ -134,6 +134,17 @@ router.delete("/:id", async (req, res) => {
     console.log(err);
   }
 });
+router.delete("/comments/:id", async (req, res) => {
+  try {
+    const foundComment = await db.comment.findOne({
+      where: { id: req.params.id },
+    });
+    await foundComment.destroy();
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 router.post("/comments", (req, res) => {
   db.comment
