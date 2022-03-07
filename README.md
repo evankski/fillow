@@ -1,10 +1,6 @@
 # Fillow
 <h1> What is Fillow? </h1>
-Fillow is a simplified version of Zillow. You first will be prompted to create an account. After account creation, you will be able to view all houses listed by other users. You will be able to favorite any homes you like. 
-C - You will be able to create a listing
-R - You can see listings posted by other users
-U - You will be able to edit any listing you posted
-D - You can delete any listing that you posted
+Fillow is a simplified version of Zillow! When creating an account, you will have the option to browse every listing posted by already signed up users. Any user can upload a listing of their choice. Is there a listing you like? Go ahead and throw it in your favorites! Want to let someone know how beautiful their property is? Leave a comment! This is a great place for everyone to show off their properties.
 
 <h1>Installation Instructions </h1>
 ```
