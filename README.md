@@ -6,6 +6,7 @@ Fillow is a simplified version of Zillow! When creating an account, you will hav
 1. first use npm init -y
 2. then create your database - create db fillow
 3. install all node packages below 
+4. Create a .env and sign up for a API key on mapbox (its free) and post MAPBOX_TOKEN=key
 ```
 npm i @mapbox/mapbox-sdk
 ```
