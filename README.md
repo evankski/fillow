@@ -3,46 +3,34 @@
 Fillow is a simplified version of Zillow! When creating an account, you will have the option to browse every listing posted by already signed up users. Any user can upload a listing of their choice. Is there a listing you like? Go ahead and throw it in your favorites! Want to let someone know how beautiful their property is? Leave a comment! This is a great place for everyone to show off their properties.
 
 # Installation Instructions
-1. first use npm init -y
-2. then create your database - create db fillow
-3. install all node packages below 
-4. Create a .env and sign up for a API key on mapbox (its free) and post MAPBOX_TOKEN=key
-```
-npm i @mapbox/mapbox-sdk
-```
-```
-npm i bcrypt
-```
-```
-npm i cookie-parser
-```
-```
-npm i crypto-js
-```
-```
-npm i dotenv
-```
-```
-npm i ejs
-```
-```
-npm i express
-```
-```
-npm i express-ejs-layouts
-```
-```
-npm i mapbox
-```
-```
-npm i mapbox-gl
-```
-```
-npm i method-override
-```
-```
-npm i pg sequelize
-```
+1. Fork and clone this repository
+2. Run ```npm i``` to install all dependencies
+<details>
+<summary>Dependencies</summary>
+<ul>
+<li> @mapbox/mapbox-sdk</li>
+<li> bcrypt</li>
+<li> cookie-parser</li>
+<li> dotenv</li>
+<li> ejs</li>
+<li> express</li>
+<li> express-ejs-layouts</li>
+<li> mapbox</li>
+<li> mapbox-gl</li>
+<li> method-override</li>
+<li> sequelize</li>
+</ul>
+</details>
+
+
+3. Run ```createdb fillow```
+4. Run ```sequelize db:migrate```
+5. Create an account at https://www.mapbox.com/ and sign up for a free API key
+6. Create a .env file 
+7. Inside of the .env
+  - First put in your API key ```MAPBOX_TOKEN=exampleToken```
+  - Then put your secret key in for user authentication ```SECRET=secretPhrase```
+  - Lastly put in the port you want to use ```PORT=8000```
 
 # Deployed Website 
 https://fillow.herokuapp.com/
