@@ -41,63 +41,66 @@
   <% } %>
 </div>
 
-<form action="/listings/comments" method="POST" class="create-comment">
-  <div class="form-group">
-    <label for="content">Comment</label>
-    <input
-      type="text"
-      class="form-control"
-      id="content"
-      name="content"
-      required
-    />
-
+<div class="comment-form">
+  <form action="/listings/comments" method="POST" class="create-comment">
     <div class="form-group">
+      <label for="content">Comment</label>
       <input
-        type="hidden"
+        type="text"
         class="form-control"
-        id="userId"
-        name="userId"
-        value="<%= user.id %>"
+        id="content"
+        name="content"
+        required
       />
+  
+      <div class="form-group">
+        <input
+          type="hidden"
+          class="form-control"
+          id="userId"
+          name="userId"
+          value="<%= user.id %>"
+        />
+      </div>
+  
+      <div class="form-group">
+        <input
+          type="hidden"
+          class="form-control"
+          id="listingId"
+          name="listingId"
+          value="<%= listing.id %>"
+        />
+      </div>
+  
+      <div class="form-group">
+        <input
+          type="hidden"
+          class="form-control"
+          id="email"
+          name="email"
+          value="<%= user.email %>"
+        />
+      </div>
     </div>
-
-    <div class="form-group">
-      <input
-        type="hidden"
-        class="form-control"
-        id="listingId"
-        name="listingId"
-        value="<%= listing.id %>"
-      />
-    </div>
-
-    <div class="form-group">
-      <input
-        type="hidden"
-        class="form-control"
-        id="email"
-        name="email"
-        value="<%= user.email %>"
-      />
-    </div>
-  </div>
-  <input type="submit" class="btn btn-primary" />
-</form>
-
-<h2>Comments about the property</h2>
-<div class="comment-about-prop">
-  <% comment.forEach(element => { %>
-  <li><%= element.content %> - <%= element.email %></li>
-  <form action="/comments/<%= comment.id %>/?_method=DELETE" method="post">
-    <input
-      type="submit"
-      value="Delete this comment"
-      class="show-submit"
-      class="center-form"
-    />
+    <input type="submit" class="btn btn-primary" />
   </form>
-  <% }) %>
+</div>
+<div class="comment-prop">
+  <h2>Comments about the property</h2>
+  <div class="comment-about-prop">
+    <% comment.forEach(element => { %>
+    <li><%= element.content %> - <%= element.email %></li>
+    <!-- <form action="/comments/<%= comment.id %>/?_method=DELETE" method="post" class="delete-comment">
+      <input
+        type="submit"
+        value="Delete this comment"
+        class="show-submit"
+        class="center-form"
+      />
+    </form> -->
+    <% }) %>
+  </div>
 </div>
 
 <div id="map"></div>
