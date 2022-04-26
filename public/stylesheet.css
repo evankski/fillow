@@ -124,10 +124,12 @@ nav ul {
 padding-top: 20px;
 }
 .create {
-padding-top: 20px;
+padding-top: 2rem;
+padding-bottom: 2rem;
 }
 .create-or-login {
-padding-top: 20px;
+padding-top: 2rem;
+text-align: center;
 }
 /* .show-image {
 padding-top: 20px;
@@ -300,4 +302,62 @@ a:hover {
 .login-field{
   color:black;
   text-align: left;
+}
+.favorites {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.create-a-listing {
+  display: flex;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .register {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.9rem;
+  }
+  .house-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .show-buttons {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-comment {
+    text-align: center;
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 13rem;
+    padding: 1.5rem;
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  #map {
+    position: relative;
+    width: 100%;
+    height: 22rem;
+    display: block;
+  }
 }
