@@ -120,7 +120,10 @@ router.put("/edit/:id", async (req, res) => {
   }
 });
 router.get("/edit/:id", async (req, res) => {
-  res.render("listings/edit.ejs", { listingId: req.params.id});
+  const user = res.locals.user
+  console.log(req.params.id)
+  console.log(res.locals.user)
+  res.render("listings/edit.ejs", { listingId: req.params.id });
 });
 
 router.delete("/:id", async (req, res) => {
