@@ -71,28 +71,6 @@ The API I chose to use was MapBox to display each listing on a map that shows it
 | /listings/comments      | POST
 
 
-# Wireframes 
-# Home page
-<img width="506" alt="Screen Shot 2022-02-27 at 11 23 16 PM" src="https://user-images.githubusercontent.com/95590888/155941290-fe3dbca0-083a-4466-abc4-d80a48aec7e4.png">
-
-# After sign in
-<img width="478" alt="Screen Shot 2022-02-27 at 11 24 45 PM" src="https://user-images.githubusercontent.com/95590888/155941361-369fb8ed-96c6-43b4-970b-41bbd5b7d7ca.png">
-
-# Listing page
-<img width="481" alt="Screen Shot 2022-02-27 at 11 25 40 PM" src="https://user-images.githubusercontent.com/95590888/155941436-f4ea8923-035b-47dd-a0ff-c18f8f5f64f2.png">
-
-# Upload/create
-<img width="467" alt="Screen Shot 2022-02-27 at 11 26 19 PM" src="https://user-images.githubusercontent.com/95590888/155941505-f9452aa0-b782-471f-a0b6-1f8f53476453.png">
-
-# Edit page
-<img width="471" alt="Screen Shot 2022-02-27 at 11 26 55 PM" src="https://user-images.githubusercontent.com/95590888/155941579-e5551557-89e3-4106-ba6e-cdd263223fae.png">
-
-# Delete
-<img width="381" alt="Screen Shot 2022-02-27 at 11 27 28 PM" src="https://user-images.githubusercontent.com/95590888/155941631-a5bca6d2-7135-45d3-9204-5462b9fb2853.png">
-
-# Listing after link clicked
-<img width="371" alt="Screen Shot 2022-02-27 at 11 27 55 PM" src="https://user-images.githubusercontent.com/95590888/155941684-a5246dbd-05d2-4adf-be62-cc37a320e432.png">
-
 # User Stories 
 As a user, I want to create a listing of my house for every other user to see so I can sell my property.
 As a user, I want to favorite other peoples listings so I can keep track of the best properties.
